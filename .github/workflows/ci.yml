@@ -1,21 +1,22 @@
-name: CICD_test
+name: CICD for website
 
 on:
   push:
-    branches: [ main ]
+    branches: [ gh.pages ]
   pull_request:
-    branches: [ main ]
+    branches: [ gh.pages ]
 
 jobs:
-  show-text:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Print text
-      run: echo "This is CI/CD test"
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish dir: ./
 
-    - name: Print date
-      run: date
