@@ -1,1 +1,35 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <title>CI/CD тест</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Это CI/CD!</h1>
+    <div class="container">
+        <p>Эта страница развёрнута с помощью CI/CD.</p>
+        <p>Время предыдущего обновления: <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
